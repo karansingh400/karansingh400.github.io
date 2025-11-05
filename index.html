@@ -156,6 +156,26 @@
     #testStatus{position:fixed; right:12px; bottom:12px; padding:6px 10px; border-radius:10px; font-size:12px; border:1px solid var(--muted); background:var(--bg-soft); z-index:99}
     #testStatus.pass{color:#10b981}
     #testStatus.fail{color:#ef4444}
+      /* Fix toolbox chips clipping / wrapping */
+.about .kv{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.chip{
+  flex: 0 0 auto;        /* don't shrink */
+  white-space: nowrap;    /* keep text on one line */
+  line-height: 1.2;       /* avoid vertical clipping */
+  padding: 6px 12px;      /* a bit more breathing room */
+}
+
+/* Optional: make chips smaller on very narrow screens */
+@media (max-width: 480px){
+  .chip{ font-size: 11px; padding: 5px 10px; }
+}
+
   </style>
 </head>
 
