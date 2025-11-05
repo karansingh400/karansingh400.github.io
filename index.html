@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Karan Pratap Singh Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <!-- Vendor CSS (existing) -->
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      /*======================================
+      //--//-->   BASE TWEAKS
+      ======================================*/
+      body { background: #0f131a; color: #e7e9ee; }
+      .navbar.ftco_navbar { background: #0f131a !important; }
+      .underline { width: 80px; height: 3px; background: #ffbd39; border-radius: 999px; margin-left: 15px;}
+      .big-4 { color: #fff; }
+
+      /*======================================
+      //--//-->   THEME TOGGLE (top-right)
+      ======================================*/
+/* Black + Blue theme toggle (matches your screenshot) */
+.theme-toggle{
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: #0b0f14;                 /* deep black */
+  color: #eaf2ff;                      /* light text */
+  border: 2px solid #0aa2ff;           /* bright blue outline */
+  border-radius: 14px;                  /* pill corners like screenshot */
+  padding: 8px 14px;
+  font-size: 16px;
+  line-height: 1;
+  z-index: 1000;
+  box-shadow: 0 0 0 2px rgba(10,162,255,0.15),  /* subtle outer ring */
+              0 8px 24px rgba(0,0,0,.35);       /* depth */
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.theme-toggle:hover{
+  transform: translateY(-1px);
+  background: #0e141c;
+  border-color: #22b0ff;               /* slightly brighter on hover */
+  box-shadow: 0 0 0 3px rgba(34,176,255,0.25), 0 10px 28px rgba(0,0,0,.45);
+}
+
+.theme-toggle:active{
+  transform: scale(0.97);
+}
+
+.theme-toggle:focus{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(34,176,255,0.35), 0 8px 24px rgba(0,0,0,.45);
+}
+
+
+      /*======================================
+      //--//-->   ABOUT
+      ======================================*/
+      .about-mf .box-shadow-full { padding-top: 4rem; padding-bottom: 4rem; }
+      .about-mf .about-img { margin-bottom: 2rem; }
+      .about-mf .about-img img { margin-left: 10px; border-radius: 14px; }
+      .skill-mf .progress { margin: .5rem 0 1.2rem 0; border-radius: 6px; height: .7rem; background: rgba(255,255,255,0.08); }
+      .skill-mf .progress .progress-bar { height: .7rem; background-image: linear-gradient(90deg, #ffbd39, #ff8a39); }
+
+      /* Typing */
+      #typing-animation { position: relative; font-size: 30px; font-weight: 700; color: #fff; overflow: hidden; white-space: nowrap; }
+      @keyframes typing { from { width: 0; } to { width: 100%; } }
+      @keyframes typing-cursor { from { width: 5px; } to { width: 0; } }
+
+      /* Project thumb zoom */
+      .zoom-effect { overflow: hidden; transition: transform .3s ease-out; border-radius: 16px; }
+      .zoom-effect:hover { transform: scale(1.04); }
+
+      /*======================================
+      //--//-->   EXPERIENCE CAROUSEL
+      ======================================*/
+      .experience-wrap { margin-top: .5rem; position: relative; }
+      .experience-carousel .owl-stage-outer { padding: 6px 0 16px; }
+      .xp-card{
+        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 18px 40px rgba(0,0,0,.25);
+        border-radius: 16px;
+        color: #e7e9ee;
+        padding: 20px 22px;
+        min-height: 360px;
+      }
+      .xp-card .date{ color:#ffbd39; font-weight:800; letter-spacing:.2px; text-transform: none; }
+      .xp-card .role{ margin:.35rem 0 .15rem; font-weight:800; font-size: 1.25rem; color:#fff; }
+      .xp-card .company{
+        text-transform: uppercase;
+        letter-spacing: .14em;
+        font-size: .8rem;
+        color: #b0b3b8;
+        margin-bottom: .6rem;
+      }
+      .xp-card ul{ padding-left: 1.1rem; margin: .7rem 0 0; }
+      .xp-card li{ margin: .4rem 0; color:#cfd3db; }
+
+      /* ---- Side Arrows (visible on the sides, vertically centered) ---- */
+      .experience-wrap .owl-nav{
+        position: absolute;
+        top: 50%;
+        left: -28px;
+        width: calc(100% + 56px);
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        pointer-events: none;
+        z-index: 5;
+      }
+      .experience-wrap .owl-nav button.owl-prev,
+      .experience-wrap .owl-nav button.owl-next{
+        pointer-events: all;
+        background: rgba(255,255,255,0.1) !important;
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px !important;
+        transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+        backdrop-filter: blur(2px);
+      }
+      .experience-wrap .owl-nav button.owl-prev:hover,
+      .experience-wrap .owl-nav button.owl-next:hover{
+        background: rgba(255,189,57,0.95) !important;
+        box-shadow: 0 8px 22px rgba(255,189,57,.35);
+        transform: scale(1.08);
+      }
+      .experience-wrap .owl-nav .oi{ color:#0f131a; line-height: 1; font-size: 20px; }
+      .experience-wrap .owl-nav button.owl-prev:not(:hover) .oi,
+      .experience-wrap .owl-nav button.owl-next:not(:hover) .oi{ color:#ffffff; }
+
+      /* Dots */
+      .experience-wrap .owl-dots { margin-top: 10px; text-align: center; }
+      .experience-wrap .owl-dots .owl-dot span{
+        width: 10px; height: 10px; border-radius: 999px;
+        background: rgba(255,255,255,0.25);
+        transition: transform .2s ease, background .2s ease;
+      }
+      .experience-wrap .owl-dots .owl-dot.active span{
+        background: #ffbd39; transform: scale(1.15);
+      }
+
+      /* Better cards in Resume section headers */
+      .heading-section h2 { color: #fff; }
+      .heading-section p { color: #cfd3db; }
+
+      /*======================================
+      //--//-->   LIGHT MODE OVERRIDES
+      ======================================*/
+/*======================================
+ //--//-->   BLUE MODE (instead of LIGHT MODE)
+ ======================================*/
+body.light {
+  background: #0d1b2a;              /* Deep navy blue background */
+  color: #e7f0ff;                   /* Light bluish text */
+}
+
+body.light .navbar.ftco_navbar{
+  background: #0d1b2a !important;   /* Blue navbar */
+}
+
+body.light .navbar-dark .navbar-brand,
+body.light .navbar-dark .nav-link{
+  color:#eaf2ff !important;         /* Light blue nav text */
+}
+
+body.light .big-4,
+body.light h1.big,
+body.light h2 {
+  color:#ffffff;
+}
+
+body.light .xp-card{
+  background: #12263d;              /* Slightly lighter card */
+  color: #e7f0ff;
+  border: 1px solid rgba(234,242,255,0.12);
+}
+
+body.light .xp-card .company{
+  color:#9fb6cf;
+}
+
+body.light .experience-wrap .owl-nav button.owl-prev,
+body.light .experience-wrap .owl-nav button.owl-next{
+  background: rgba(234,242,255,0.08) !important;
+  border-color: rgba(234,242,255,0.18);
+}
+
+body.light .experience-wrap .owl-nav .oi{
+  color:#eaf2ff;
+}
+
+body.light .experience-wrap .owl-nav button:hover .oi{
+  color:#0d1b2a;
+}
+
+body.light .heading-section p{
+  color:#cfe0f5;
+}
+
+
+      /* On very narrow screens keep arrows inside so they don't clip */
+      @media (max-width: 576px){
+        .experience-wrap .owl-nav { left: 0; width: 100%; }
+      }
+    </style>
+  </head>
+
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    <!-- THEME TOGGLE BUTTON -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀︎/☾</button>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Karan Pratap Singh</a>
+        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+          data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav nav ml-auto">
+            <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+            <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+            <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+            <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+            <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home-section" class="hero">
+      <div class="home-slider owl-carousel">
+        <div class="slider-item ">
+          <div class="overlay"></div>
+          <div class="container">
+            <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+              <div class="ftco-section ftco-hireme img margin-top" style="background-image: url('images/bg_1.png');">
+                <div class="overlay"></div>
+              </div>
+              <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                <div class="text">
+                  <span class="subheading">Hello!</span>
+                  <h1 class="mb-4 mt-3">I'm <span>Karan Pratap Singh</span></h1>
+                  <span id="typing-animation">Data Engineer</span>
+                  <br><br>
+                  <h2>With 7+ years of experience</h2>
+                  <p>
+                    <a href="https://github.com/karanpratapsingh2507" class="btn btn-primary py-3 px-4 class">My works</a>
+                    <a href="https://github.com/karanpratapsingh2507/Certifications" class="btn btn-white btn-outline-white py-3 px-4">Certifications</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /slider-item -->
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+      <div class="container">
+        <div class="row">
+          <div class="row d-flex align-items-stretch">
+            <div class="col-md-6 col-lg-5 d-flex">
+              <div class="img-about img d-flex align-items-stretch">
+                <div class="overlay">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                      <div class="about-img">
+                        <img src="images/about-me.jpeg" class="img-fluid rounded b-shadow-a" alt="Karan portrait">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7">
+                      <div class="about-info">
+                        <p><span class="title-s">Name: </span> <span>Karan Pratap Singh</span></p>
+                        <p><span class="title-s">Experience: </span> <span>7+ years</span></p>
+                        <p><span class="title-s">Address: </span> <span>Dallas, Texas</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-mf">
+                    <p class="title-s">Skills</p>
+                    <span>SQL</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
+                    <span>Python</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
+                    <span>Data Engineering</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
+                    <span>Machine Learning</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
+                    <span>Cloud (Azure/GCP/AWS)</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
+                    <span>ETL & Big Data</span>
+                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+              <div class="row justify-content-start pb-3">
+                <div class="col-md-12 heading-section ftco-animate">
+                  <h1 class="big">About</h1>
+                  <h2 class="mb-4">About Me</h2>
+                  <p>I am a Senior Data Engineer with a Bachelor’s in Computer Science and a Master’s in Business Analytics, specializing in architecting large-scale, highly reliable data ecosystems. I build end-to-end pipelines and lakehouse architectures powering analytics and AI across e-commerce, healthcare, retail, and SaaS. I focus on orchestration, governance, quality, and CI/CD to deliver production-grade platforms that reduce latency, cut costs, and drive measurable business impact.</p>
+                  <ul class="about-info mt-4 px-md-0 px-2">
+                    <li class="d-flex"><span>Profile:</span> <span>Software Development, Machine Learning &amp; Data Engineering</span></li>
+                    <li class="d-flex"><span>Domain:</span> <span>AI/ML, Cloud & Data Platforms, Predictive Analytics, Intelligent Systems, Automation</span></li>
+                    <li class="d-flex"><span>Education:</span> <span>Master of Science in Business Analytics</span></li>
+                    <li class="d-flex"><span>BI Tools:</span> <span>Power BI, Tableau</span></li>
+                    <li class="d-flex"><span>Core Skills:</span> <span>Cloud (Azure, GCP, AWS), PySpark, Airflow, BigQuery, Data Modeling, ML, SQL, Python, Git, JIRA, CI/CD, NLP</span></li>
+                    <li class="d-flex"><span>Interest:</span> <span>Music, hiking &amp; swimming</span></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="counter-wrap ftco-animate d-flex mt-md-3">
+                <div class="text">
+                  <p><a href="https://www.linkedin.com/in/kps25/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+                </div>
+              </div>
+            </div>
+          </div><!-- /row inner -->
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME / EXPERIENCE -->
+    <section class="ftco-section ftco-no-pb" id="resume-section">
+      <div class="container">
+        <div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Resume</h1>
+            <h2 class="mb-4">Resume</h2>
+            <p>Senior Data Engineer with 7+ years building scalable data platforms and analytics ecosystems. Expert in end-to-end ETL, lakehouse design, and production orchestration that power forecasting, cost optimization, customer intelligence, and fraud detection.</p>
+            <p>
+              <a href="https://drive.google.com/file/d/1lsI8wQRyf0qmuX7UVWVMC1yevZ5h-Spg/view?usp=sharing"
+                 class="btn btn-primary py-3 px-5">Download CV</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience Title -->
+        <div class="row">
+          <h1 class="big-4">Experience</h1>
+          <div class="underline"></div>
+        </div>
+        <br>
+
+        <!-- EXPERIENCE CAROUSEL -->
+        <div class="experience-wrap">
+          <div class="owl-carousel experience-carousel">
+
+            <!-- ITEM 1 -->
+            <div class="xp-card">
+              <span class="date">Feb 2025 – Present</span>
+              <h3 class="role">Senior Data Engineer</h3>
+              <p class="company">UnitedHealth Group, Irvine, California</p>
+              <ul>
+                <li>Built an AI-driven churn prediction platform on GCP (BigQuery, Databricks, Vertex AI) integrating 10M+ monthly member interactions, improving retention accuracy by 18%.</li>
+                <li>Automated ETL and orchestration (PySpark, Airflow, Cloud Build), cutting reporting latency by 60% and deployment lead time by 50%.</li>
+                <li>Delivered HIPAA-compliant Delta Lake pipelines and real-time Looker dashboards on Azure, influencing $50M+ retention-driven decisions annually.</li>
+              </ul>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="xp-card">
+              <span class="date">Aug 2024 – Jan 2025</span>
+              <h3 class="role">Data Engineer</h3>
+              <p class="company">Walmart Global Tech, Bentonville, Arkansas</p>
+              <ul>
+                <li>Developed and optimized Azure Data Factory and Databricks pipelines processing 10M+ daily sales, pricing, and promotion records, reducing data latency from 12 hours to under 1 hour and improving forecast accuracy by 20%.</li>
+                <li>Engineered parameterized “what-if” simulation frameworks for pricing, inventory, and seasonality, cutting scenario analysis time by 70% and enabling 50+ finance leaders to make data-driven decisions across $1.6B in sales.</li>
+                <li>Optimized Spark workloads and Delta Lake architecture, reducing compute costs by $250K annually and powering real-time financial insights for 100+ users via Power BI dashboards.</li>
+              </ul>
+            </div>
+            
+            <!-- ITEM 3 -->
+            <div class="xp-card">
+              <span class="date">Mar 2024 - Jul 2024</span>
+              <h3 class="role">Data Engineer</h3>
+              <p class="company">Target, Dallas, Texas</p>
+              <ul>
+                <li>Developed a GCP-based data platform integrating customer, transaction, and catalog data using Dataflow, Pub/Sub, and BigQuery, enabling real-time recommendation engines and demand forecasts across 2,000+ stores.</li>
+                <li>Automated ingestion and orchestration with Airflow and GitLab CI, reducing SLA violations by 70%, improving reporting latency from 24 hours to under 1 hour, and driving 12% higher campaign conversions.</li>
+              </ul>
+            </div>
+
+            <!-- ITEM 4 -->
+            <div class="xp-card">
+              <span class="date">Feb 2020 - Jul 2022</span>
+              <h3 class="role">Senior Data Scientist</h3>
+              <p class="company">Walmart Global Tech</p>
+              <ul>
+                <li>Built a real-time eCommerce risk analytics platform on GCP to detect fraud, credit risk, and shopper intent across millions of daily transactions, enabling faster, trust-based decisions.</li>
+                <li>Redesigned petabyte-scale pipelines with Dataflow, BigQuery, and Composer, reducing data latency from 6 hours to 30 min and accelerating model retraining cycles 3X.</li>
+              </ul>
+            </div>
+
+            <!-- ITEM 5 -->
+            <div class="xp-card">
+              <span class="date">Jun 2018 - Jan 2020</span>
+              <h3 class="role">Software Engineer</h3>
+              <p class="company">Adobe, Noida, India</p>
+              <ul>
+                <li>–	Modernized Adobe’s data infrastructure by migrating analytics workloads to AWS (S3, Redshift, Glue), cutting reporting latency by 40% and improving global pipeline scalability.</li>
+                <li>Scrum/Kanban delivery; ~25% faster releases.</li>
+                <li>Built ETL and star-schema data models for customer engagement and churn analytics, enabling real-time insights across 20+ teams and ensuring 100% GDPR/CCPA compliance.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <br><br>
+        <div class="row">
+          <h1 class="big-4">Education</h1>
+          <div class="underline"></div>
+        </div>
+        <br>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="resume-wrap ftco-animate">
+              <span class="date">2022–2024</span>
+              <h2>MS in Business Analytics</h2>
+              <span class="position">The University of Texas at Dallas</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="resume-wrap ftco-animate">
+              <span class="date">2014–2018</span>
+              <h2>Bachelor of Engineering</h2>
+              <span class="position">Abdul Kalam Technical University</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="ftco-section" id="project-section">
+      <div class="row">
+        <h1 class="big-4">Projects</h1>
+      </div>
+      <br><br>
+      <div class="container px-4">
+        <div class="row d-flex">
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="https://github.com/prathameshbhavsar19/NeuroScan"
+                 class="block-20 zoom-effect"
+                 style="background-image: url('images/proj_1.jpg'); background-size: contain; background-position: center; aspect-ratio: 16/9;">
+              </a>
+              <div class="text mt-3 float-right d-block">
+                <h3 class="heading"><a href="https://github.com/prathameshbhavsar19/NeuroScan">NeuroScan - Brain Tumor Detection</a></h3>
+                <p>Deep learning–based MRI tumor detection using transfer learning.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="https://github.com/prathameshbhavsar19/UberDataAnalytics"
+                 class="block-20 zoom-effect"
+                 style="background-image: url('images/proj_2.jpg'); background-size: contain; background-position: center; aspect-ratio: 16/9;">
+              </a>
+              <div class="text mt-3 float-right d-block">
+                <h3 class="heading"><a href="https://github.com/prathameshbhavsar19/UberDataAnalytics">Uber Data Analytics</a></h3>
+                <p>Airflow + BigQuery ETL for rides data and operational insights.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="https://github.com/prathameshbhavsar19/LinkedInPostGenerator"
+                 class="block-20 zoom-effect"
+                 style="background-image: url('images/genai_thumbnail.png'); background-size: contain; background-position: center; aspect-ratio: 16/9;">
+              </a>
+              <div class="text mt-3 float-right d-block">
+                <h3 class="heading"><a href="https://github.com/prathameshbhavsar19/LinkedInPostGenerator">GenAI Post Generator</a></h3>
+                <p>LLama on Groq API to generate on-brand LinkedIn posts.</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /row -->
+      </div>
+    </section>
+
+    <!-- COUNTERS -->
+    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+      <div class="container">
+        <div class="row d-md-flex align-items-center">
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="10">0</strong>
+                <span>Projects Completed and counting</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="250">0</strong>
+                <span>Sleepless Nights</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+            <div class="block-18">
+              <div class="text">
+                <strong class="number" data-number="500">0</strong>
+                <span>Cups of Coffee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+        <div class="row justify-content-center">
+          <div class="col-md-7 ftco-animate text-center">
+            <h2>More projects on<span> GitHub </span></h2>
+            <div class="heading">
+              <h4>I specialize in automation, AI solutions, and data engineering</h4>
+              <br>
+              <p><a href="https://github.com/karanpratapsingh2507" class="btn btn-primary py-3 px-5">GitHub</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Below are the details to reach out to me!</p>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-map-signs"></span>
+              </div>
+              <h3 class="mb-4">Address</h3>
+              <p>Dallas, Texas</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-phone2"></span>
+              </div>
+              <h3 class="mb-4">Contact Number</h3>
+              <p><a href="tel://+14693322869">+1 (469) 332-2869</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-paper-plane"></span>
+              </div>
+              <h3 class="mb-4">Email Address</h3>
+              <p><a href="mailto:karan.kps25@gmail.com">karan.kps25@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+              <div class="icon d-flex align-items-center justify-content-center">
+                <span class="icon-globe"></span>
+              </div>
+              <h3 class="mb-4">LinkedIn</h3>
+              <p><a href="https://www.linkedin.com/in/kps25/">Click Here</a></p>
+            </div>
+          </div>
+
+          <div class="container">
+            <br><br><br>
+            <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+              <li class="ftco-animate normal-txt">Find me on</li>
+              <li class="ftco-animate"><a href="https://www.linkedin.com/in/kps25/"><span class="icon-linkedin"></span></a></li>
+              <li class="ftco-animate"><a href="https://www.instagram.com/karan.kps25/"><span class="icon-instagram"></span></a></li>
+            </ul>
+            <br>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>Copyright
+              &copy;<script>document.write(new Date().getFullYear());</script>
+              All rights reserved by Karan Pratap Singh
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- LOADER -->
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+      </svg>
+    </div>
+
+    <!-- Vendor JS (existing) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Experience Carousel Init + Keyboard support -->
+    <script>
+      $(function () {
+        $('.experience-carousel').owlCarousel({
+          loop: false,
+          margin: 24,
+          nav: true,
+          dots: true,
+          smartSpeed: 600,
+          responsive: {
+            0:   { items: 1 },
+            992: { items: 2 }
+          },
+          navText: [
+            '<span class="oi oi-chevron-left" aria-label="Previous"></span>',
+            '<span class="oi oi-chevron-right" aria-label="Next"></span>'
+          ]
+        });
+
+        // Keyboard navigation for accessibility
+        $(document).on('keydown', function (e) {
+          const $c = $('.experience-carousel');
+          if (e.key === 'ArrowLeft')  $c.trigger('prev.owl.carousel');
+          if (e.key === 'ArrowRight') $c.trigger('next.owl.carousel');
+        });
+      });
+
+      // THEME TOGGLE (remember preference)
+      (function(){
+        const btn = document.getElementById('themeToggle');
+        const saved = localStorage.getItem('theme');   // "light" | "dark" | null
+        if (saved === 'light') document.body.classList.add('light');
+
+        const syncIcon = () => {
+          btn.textContent = document.body.classList.contains('light') ? '☾/☀︎' : '☀︎/☾';
+        };
+        syncIcon();
+
+        btn.addEventListener('click', () => {
+          document.body.classList.toggle('light');
+          localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
+          syncIcon();
+        });
+      })();
+    </script>
+  </body>
+</html>
