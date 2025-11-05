@@ -175,6 +175,29 @@
 @media (max-width: 480px){
   .chip{ font-size: 11px; padding: 5px 10px; }
 }
+/* Fix chip wrapping and cut-off issue */
+.about .kv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.chip {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  line-height: 1.3;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--muted);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+  color: var(--txt);
+}
+
+.about .kv:last-of-type {
+  margin-bottom: 6px;
+}
 
   </style>
 </head>
@@ -236,22 +259,25 @@
         </p>
 
         <h2 style="margin-top:4px">Toolbox</h2>
-        <div class="about kv">
-          <span class="chip">BigQuery</span>
-          <span class="chip">Power BI</span>
-          <span class="chip">Tableau</span>
-          <span class="chip">SQL</span>
-          <span class="chip">Python</span>
-          <span class="chip">Airflow / ADF</span>
-          <span class="chip">AWS · Azure · GCP</span>
-          <span class="chip">Jira / Confluence</span>
-        </div>
-        <div class="about kv" style="margin-top:8px">
-          <span class="chip">PMP®</span>
-          <span class="chip">CSM®</span>
-          <span class="chip">AWS Data Engineer</span>
-          <span class="chip">Databricks Lakehouse</span>
-        </div>
+<div class="about kv">
+  <span class="chip">BigQuery</span>
+  <span class="chip">Power BI</span>
+  <span class="chip">Tableau</span>
+  <span class="chip">SQL</span>
+  <span class="chip">Python</span>
+  <span class="chip">Airflow</span>
+  <span class="chip">ADF</span>
+  <span class="chip">AWS · Azure · GCP</span>
+  <span class="chip">Jira / Confluence</span>
+</div>
+<div class="about kv" style="margin-top:8px">
+  <span class="chip">PMP®</span>
+  <span class="chip">CSM®</span>
+  <span class="chip">AWS Data Engineer</span>
+  <span class="chip">Databricks</span>
+  <span class="chip">Lakehouse</span>
+</div>
+
       </div>
     </section>
 
