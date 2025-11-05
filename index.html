@@ -1,705 +1,539 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Karan Pratap Singh Portfolio</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karan Pratap Singh — Technical Program/Project Manager</title>
+  <meta name="description" content="PMP, CSM. 9+ years leading AI/data programs across healthcare, retail and SaaS. Projects, experience and contact." />
+  <meta name="color-scheme" content="dark light" />
+  <meta property="og:title" content="Karan Pratap Singh — Technical Program/Project Manager" />
+  <meta property="og:description" content="PMP, CSM. 9+ years leading AI/data programs across healthcare, retail and SaaS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og.png" />
+  <meta name="theme-color" content="#121417" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <style>
+    /* ==========================
+       Dark (default) — Blue accent
+       ========================== */
+    :root{
+      --bg:#0e1217;          /* page background */
+      --bg-soft:#141923;     /* card background */
+      --txt:#e7e9ee;         /* main text */
+      --sub:#a8b0bd;         /* secondary text */
+      --brand:#3aa0ff;       /* blue */
+      --brand-2:#7dd3fc;     /* sky */
+      --ok:#10b981;          /* green */
+      --warn:#f59e0b;        /* amber */
+      --muted:#242b36;       /* borders / separators */
+      --shadow: 0 14px 36px rgba(0,0,0,.45);
+      --radius: 16px;
+      --portrait-bg: radial-gradient(65% 65% at 30% 30%, color-mix(in oklab, var(--brand) 40%, transparent), transparent 60%),
+                     radial-gradient(65% 65% at 70% 70%, color-mix(in oklab, var(--brand-2) 35%, transparent), transparent 60%),
+                     var(--bg-soft);
+    }
 
-    <!-- Vendor CSS (existing) -->
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+    /* ==========================
+       Light — subtle lavender with blue accent
+       ========================== */
+    [data-theme="light"]{
+      --bg:#f6f7fb;
+      --bg-soft:#ffffff;
+      --txt:#0b1220;
+      --sub:#546071;
+      --brand:#2563eb;     /* blue-600 */
+      --brand-2:#60a5fa;   /* blue-400 */
+      --ok:#059669;
+      --warn:#b45309;
+      --muted:#e6e8ee;
+      --shadow: 0 18px 38px rgba(9,14,26,.08);
+      --portrait-bg: radial-gradient(65% 65% at 30% 30%, color-mix(in oklab, var(--brand) 18%, transparent), transparent 60%),
+                     radial-gradient(65% 65% at 70% 70%, color-mix(in oklab, var(--brand-2) 18%, transparent), transparent 60%),
+                     var(--bg-soft);
+    }
 
-    <style>
-      /*======================================
-      //--//-->   BASE TWEAKS
-      ======================================*/
-      body { background: #0f131a; color: #e7e9ee; }
-      .navbar.ftco_navbar { background: #0f131a !important; }
-      .underline { width: 80px; height: 3px; background: #ffbd39; border-radius: 999px; margin-left: 15px;}
-      .big-4 { color: #fff; }
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1000px 700px at 110% -10%, rgba(58,160,255,.08), transparent 60%),
+        radial-gradient(900px 600px at -10% -10%, rgba(125,211,252,.06), transparent 55%),
+        var(--bg);
+      color:var(--txt);
+      line-height:1.6;
+    }
+    [data-theme="light"] body{
+      background:
+        radial-gradient(1000px 700px at 110% -10%, rgba(37,99,235,.10), transparent 60%),
+        radial-gradient(900px 600px at -10% -10%, rgba(96,165,250,.10), transparent 55%),
+        var(--bg);
+    }
 
-      /*======================================
-      //--//-->   THEME TOGGLE (top-right)
-      ======================================*/
-/* Black + Blue theme toggle (matches your screenshot) */
-.theme-toggle{
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  background: #0b0f14;                 /* deep black */
-  color: #eaf2ff;                      /* light text */
-  border: 2px solid #0aa2ff;           /* bright blue outline */
-  border-radius: 14px;                  /* pill corners like screenshot */
-  padding: 8px 14px;
-  font-size: 16px;
-  line-height: 1;
-  z-index: 1000;
-  box-shadow: 0 0 0 2px rgba(10,162,255,0.15),  /* subtle outer ring */
-              0 8px 24px rgba(0,0,0,.35);       /* depth */
-  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
-}
+    .container{max-width:1100px; margin:0 auto; padding: 24px;}
+    header{position:sticky; top:0; backdrop-filter: blur(10px); background: color-mix(in oklab, var(--bg) 78%, transparent); border-bottom:1px solid var(--muted); z-index:10}
+    [data-theme="light"] header{ background: rgba(255,255,255,.75); border-bottom-color: var(--muted); }
+    nav{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--txt)}
+    .brand .dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(45deg, var(--brand), var(--brand-2)); box-shadow:0 0 0 4px color-mix(in oklab, var(--brand) 20%, transparent)}
+    .brand strong{font-weight:700; letter-spacing:.2px}
+    .menu a{color:var(--sub); text-decoration:none; padding:8px 12px; border-radius:10px}
+    .menu a:hover{background:var(--muted); color:var(--txt)}
+    .toggle{border:2px solid color-mix(in oklab, var(--brand) 70%, transparent); background:var(--bg-soft); color:var(--txt); border-radius:14px; padding:8px 12px; cursor:pointer; box-shadow:0 0 0 2px color-mix(in oklab, var(--brand) 20%, transparent)}
 
-.theme-toggle:hover{
-  transform: translateY(-1px);
-  background: #0e141c;
-  border-color: #22b0ff;               /* slightly brighter on hover */
-  box-shadow: 0 0 0 3px rgba(34,176,255,0.25), 0 10px 28px rgba(0,0,0,.45);
-}
+    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; padding: 40px 0}
+    .card{background:linear-gradient(180deg, color-mix(in oklab, var(--bg-soft) 92%, transparent), var(--bg-soft)); border:1px solid var(--muted); border-radius: var(--radius); box-shadow: var(--shadow)}
+    .p24{padding:24px}
+    .pill{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border:1px solid var(--muted); border-radius:999px; font-size:12px; color:var(--sub); background: color-mix(in oklab, var(--bg) 85%, transparent)}
+    [data-theme="light"] .pill{ background: linear-gradient(0deg, rgba(37,99,235,.06), rgba(96,165,250,.06)); }
 
-.theme-toggle:active{
-  transform: scale(0.97);
-}
+    h1{font-size: clamp(28px, 5vw, 44px); line-height:1.18; margin:10px 0 14px}
+    .lead{font-size: clamp(15px, 2.2vw, 18px); color:var(--sub); margin: 0 0 18px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid var(--muted); text-decoration:none; color:var(--txt); background: var(--bg-soft)}
+    .btn.primary{background: linear-gradient(90deg, var(--brand), var(--brand-2)); border:0; color:white}
+    .btn:hover{transform: translateY(-1px); box-shadow: var(--shadow)}
 
-.theme-toggle:focus{
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(34,176,255,0.35), 0 8px 24px rgba(0,0,0,.45);
-}
+    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:18px}
+    .span-12{grid-column: span 12}
+    .span-8{grid-column: span 8}
+    .span-4{grid-column: span 4}
+    @media (max-width: 900px){ .hero{grid-template-columns: 1fr} .span-8,.span-4{grid-column: span 12} }
 
+    section{scroll-margin-top:80px; margin: 30px 0 40px}
+    section h2{font-size: clamp(20px, 2.6vw, 28px); margin:0 0 10px}
+    section p.sub{color:var(--sub); margin:0 0 14px}
 
-      /*======================================
-      //--//-->   ABOUT
-      ======================================*/
-      .about-mf .box-shadow-full { padding-top: 4rem; padding-bottom: 4rem; }
-      .about-mf .about-img { margin-bottom: 2rem; }
-      .about-mf .about-img img { margin-left: 10px; border-radius: 14px; }
-      .skill-mf .progress { margin: .5rem 0 1.2rem 0; border-radius: 6px; height: .7rem; background: rgba(255,255,255,0.08); }
-      .skill-mf .progress .progress-bar { height: .7rem; background-image: linear-gradient(90deg, #ffbd39, #ff8a39); }
+    .about .kv{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .chip{font-size:12px; padding:6px 10px; background:color-mix(in oklab, var(--bg) 85%, transparent); border:1px solid var(--muted); border-radius:999px}
+    [data-theme="light"] .chip{ background: linear-gradient(0deg, rgba(37,99,235,.05), rgba(96,165,250,.05)); }
 
-      /* Typing */
-      #typing-animation { position: relative; font-size: 30px; font-weight: 700; color: #fff; overflow: hidden; white-space: nowrap; }
-      @keyframes typing { from { width: 0; } to { width: 100%; } }
-      @keyframes typing-cursor { from { width: 5px; } to { width: 0; } }
+    .projects .controls{display:flex; gap:8px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+    .controls .left{display:flex; gap:8px; flex-wrap:wrap; align-items:center}
+    select, input[type="search"]{background:var(--bg-soft); color:var(--txt); border:1px solid var(--muted); border-radius:10px; padding:8px 10px}
 
-      /* Project thumb zoom */
-      .zoom-effect { overflow: hidden; transition: transform .3s ease-out; border-radius: 16px; }
-      .zoom-effect:hover { transform: scale(1.04); }
+    .repo-grid{display:grid; grid-template-columns: repeat(auto-fill,minmax(260px, 1fr)); gap:16px; margin-top:16px}
+    .repo{display:flex; flex-direction:column; gap:10px; padding:16px; border:1px solid var(--muted); border-radius:14px; background:linear-gradient(180deg, color-mix(in oklab, var(--bg-soft) 95%, transparent), var(--bg-soft))}
+    .repo h3{font-size:16px; margin:0}
+    .repo h3 a{color:var(--txt); text-decoration:none; line-height:1.25; overflow-wrap:anywhere; hyphens:auto}
+    .repo p{color:var(--sub); margin:0; font-size:14px}
+    .meta{display:flex; gap:10px; flex-wrap:wrap; align-items:center; color:var(--sub); font-size:12px}
+    .topic{font-size:11px; padding:4px 8px; border:1px solid var(--muted); border-radius:999px; color:var(--sub)}
 
-      /*======================================
-      //--//-->   EXPERIENCE CAROUSEL
-      ======================================*/
-      .experience-wrap { margin-top: .5rem; position: relative; }
-      .experience-carousel .owl-stage-outer { padding: 6px 0 16px; }
-      .xp-card{
-        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-        border: 1px solid rgba(255,255,255,0.08);
-        box-shadow: 0 18px 40px rgba(0,0,0,.25);
-        border-radius: 16px;
-        color: #e7e9ee;
-        padding: 20px 22px;
-        min-height: 360px;
-      }
-      .xp-card .date{ color:#ffbd39; font-weight:800; letter-spacing:.2px; text-transform: none; }
-      .xp-card .role{ margin:.35rem 0 .15rem; font-weight:800; font-size: 1.25rem; color:#fff; }
-      .xp-card .company{
-        text-transform: uppercase;
-        letter-spacing: .14em;
-        font-size: .8rem;
-        color: #b0b3b8;
-        margin-bottom: .6rem;
-      }
-      .xp-card ul{ padding-left: 1.1rem; margin: .7rem 0 0; }
-      .xp-card li{ margin: .4rem 0; color:#cfd3db; }
+    .skeleton{animation: pulse 1.2s infinite ease-in-out; background: linear-gradient(90deg, color-mix(in oklab, var(--bg) 85%, transparent), color-mix(in oklab, var(--bg) 80%, transparent) 25%, color-mix(in oklab, var(--bg) 85%, transparent) 50%); background-size:200% 100%; height:120px; border-radius:14px; border:1px solid var(--muted)}
+    @keyframes pulse{0%{background-position:0 0}100%{background-position:-200% 0}}
 
-      /* ---- Side Arrows (visible on the sides, vertically centered) ---- */
-      .experience-wrap .owl-nav{
-        position: absolute;
-        top: 50%;
-        left: -28px;
-        width: calc(100% + 56px);
-        transform: translateY(-50%);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        pointer-events: none;
-        z-index: 5;
-      }
-      .experience-wrap .owl-nav button.owl-prev,
-      .experience-wrap .owl-nav button.owl-next{
-        pointer-events: all;
-        background: rgba(255,255,255,0.1) !important;
-        border: 1px solid rgba(255,255,255,0.15);
-        border-radius: 50%;
-        width: 48px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px !important;
-        transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-        backdrop-filter: blur(2px);
-      }
-      .experience-wrap .owl-nav button.owl-prev:hover,
-      .experience-wrap .owl-nav button.owl-next:hover{
-        background: rgba(255,189,57,0.95) !important;
-        box-shadow: 0 8px 22px rgba(255,189,57,.35);
-        transform: scale(1.08);
-      }
-      .experience-wrap .owl-nav .oi{ color:#0f131a; line-height: 1; font-size: 20px; }
-      .experience-wrap .owl-nav button.owl-prev:not(:hover) .oi,
-      .experience-wrap .owl-nav button.owl-next:not(:hover) .oi{ color:#ffffff; }
+    footer{color:var(--sub); border-top:1px solid var(--muted); margin-top:40px; padding:20px 0}
+    .links{display:flex; gap:10px; flex-wrap:wrap}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
 
-      /* Dots */
-      .experience-wrap .owl-dots { margin-top: 10px; text-align: center; }
-      .experience-wrap .owl-dots .owl-dot span{
-        width: 10px; height: 10px; border-radius: 999px;
-        background: rgba(255,255,255,0.25);
-        transition: transform .2s ease, background .2s ease;
-      }
-      .experience-wrap .owl-dots .owl-dot.active span{
-        background: #ffbd39; transform: scale(1.15);
-      }
+    /* ===== Portrait styles ===== */
+    .portrait{display:grid; place-items:center; gap:12px}
+    .portrait .circle{width: clamp(160px, 40vw, 280px); aspect-ratio:1; border-radius:50%; padding:10px; background: var(--portrait-bg); border:1px solid var(--muted); box-shadow: var(--shadow);} 
+    .portrait img{width:100%; height:100%; object-fit:cover; border-radius:50%; display:block}
 
-      /* Better cards in Resume section headers */
-      .heading-section h2 { color: #fff; }
-      .heading-section p { color: #cfd3db; }
+    /* ===== Experience section ===== */
+    .experience .xp-grid{display:grid; grid-template-columns: 1fr; gap:18px}
+    .experience .xp{position:relative; background:linear-gradient(180deg, color-mix(in oklab, var(--bg-soft) 96%, transparent), var(--bg-soft)); border:1px solid var(--muted); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px 18px 18px 22px}
+    .experience .xp::before{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; border-radius:3px 0 0 3px; background:linear-gradient(180deg, var(--brand), var(--brand-2))}
+    .experience .role{font-weight:700; font-size:18px}
+    .experience .meta{color:var(--sub); font-size:14px; margin-top:4px}
+    .experience .desc{margin-top:10px}
+    @media (min-width:900px){ .experience .xp-grid{grid-template-columns: 1fr 1fr} }
 
-      /*======================================
-      //--//-->   LIGHT MODE OVERRIDES
-      ======================================*/
-/*======================================
- //--//-->   BLUE MODE (instead of LIGHT MODE)
- ======================================*/
-body.light {
-  background: #0d1b2a;              /* Deep navy blue background */
-  color: #e7f0ff;                   /* Light bluish text */
-}
+    /* ===== Stats strip ===== */
+    .stats{position:relative; padding:40px 0 30px; background:
+      radial-gradient(800px 400px at 50% -200px, color-mix(in oklab, var(--brand) 25%, transparent), transparent 60%),
+      radial-gradient(800px 400px at 50% 200px, color-mix(in oklab, var(--brand-2) 18%, transparent), transparent 60%),
+      var(--bg);
+    }
+    .stat-grid{max-width:1100px; margin:0 auto; display:grid; grid-template-columns: repeat(3,1fr); gap:24px; padding:0 24px}
+    .stat{background: var(--bg-soft); border:1px solid var(--muted); border-radius:16px; box-shadow: var(--shadow); padding:28px; text-align:center}
+    .stat .num{font-size:36px; font-weight:800; color: var(--brand)}
+    .stat .label{color: var(--sub); margin-top:8px}
+    @media (max-width:900px){ .stat-grid{grid-template-columns:1fr} }
 
-body.light .navbar.ftco_navbar{
-  background: #0d1b2a !important;   /* Blue navbar */
-}
+    /* tiny test status badge */
+    #testStatus{position:fixed; right:12px; bottom:12px; padding:6px 10px; border-radius:10px; font-size:12px; border:1px solid var(--muted); background:var(--bg-soft); z-index:99}
+    #testStatus.pass{color:#10b981}
+    #testStatus.fail{color:#ef4444}
+  </style>
+</head>
 
-body.light .navbar-dark .navbar-brand,
-body.light .navbar-dark .nav-link{
-  color:#eaf2ff !important;         /* Light blue nav text */
-}
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
 
-body.light .big-4,
-body.light h1.big,
-body.light h2 {
-  color:#ffffff;
-}
+  <!-- Header / Nav -->
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top">
+          <span class="dot" aria-hidden="true"></span>
+          <strong>Karan Pratap Singh</strong>
+        </a>
+        <div class="menu" role="navigation" aria-label="Primary">
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button id="themeToggle" class="toggle" aria-label="Toggle theme">☀︎/☾</button>
+      </nav>
+    </div>
+  </header>
 
-body.light .xp-card{
-  background: #12263d;              /* Slightly lighter card */
-  color: #e7f0ff;
-  border: 1px solid rgba(234,242,255,0.12);
-}
-
-body.light .xp-card .company{
-  color:#9fb6cf;
-}
-
-body.light .experience-wrap .owl-nav button.owl-prev,
-body.light .experience-wrap .owl-nav button.owl-next{
-  background: rgba(234,242,255,0.08) !important;
-  border-color: rgba(234,242,255,0.18);
-}
-
-body.light .experience-wrap .owl-nav .oi{
-  color:#eaf2ff;
-}
-
-body.light .experience-wrap .owl-nav button:hover .oi{
-  color:#0d1b2a;
-}
-
-body.light .heading-section p{
-  color:#cfe0f5;
-}
-
-
-      /* On very narrow screens keep arrows inside so they don't clip */
-      @media (max-width: 576px){
-        .experience-wrap .owl-nav { left: 0; width: 100%; }
-      }
-    </style>
-  </head>
-
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-    <!-- THEME TOGGLE BUTTON -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀︎/☾</button>
-
-    <!-- NAV -->
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">Karan Pratap Singh</a>
-        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-          data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="oi oi-menu"></span> Menu
-        </button>
-
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav nav ml-auto">
-            <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-            <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-            <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-            <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-            <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-          </ul>
+  <main id="main" class="container">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="card p24">
+        <span class="pill">Technical Program / Project Manager · AI & Data Programs</span>
+        <h1>I lead cross-functional teams to ship AI-enabled, data-driven outcomes.</h1>
+        <p class="lead">
+          PMP® and CSM® with 9+ years across healthcare, retail, and SaaS. I drive program governance,
+          align product–engineering–analytics, and land measurable results—fraud reduction, faster
+          pipelines, and better forecasts. Tools include BigQuery, Power BI, SQL, Python and the big three clouds.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#projects" aria-label="View projects">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14m7-7H5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            See Projects
+          </a>
+          <a class="btn" id="resumeBtn" href="resume.pdf" target="_blank" rel="noopener">📄 Resume</a>
+          <a class="btn" href="https://github.com/karansingh400" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/karan-singh-8a6614374/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-    </nav>
 
-    <!-- HERO -->
-    <section id="home-section" class="hero">
-      <div class="home-slider owl-carousel">
-        <div class="slider-item ">
-          <div class="overlay"></div>
-          <div class="container">
-            <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-              <div class="ftco-section ftco-hireme img margin-top" style="background-image: url('images/bg_1.png');">
-                <div class="overlay"></div>
-              </div>
-              <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-                <div class="text">
-                  <span class="subheading">Hello!</span>
-                  <h1 class="mb-4 mt-3">I'm <span>Karan Pratap Singh</span></h1>
-                  <span id="typing-animation">Data Engineer</span>
-                  <br><br>
-                  <h2>With 7+ years of experience</h2>
-                  <p>
-                    <a href="https://github.com/karansingh400" class="btn btn-primary py-3 px-4 class">My works</a>
-                    <a href="https://github.com/karansingh400" class="btn btn-white btn-outline-white py-3 px-4">Certifications</a>
-                  </p>
-                </div>
-              </div>
-            </div>
+      <div class="card p24">
+        <figure class="portrait" aria-labelledby="photoTitle">
+          <div class="circle">
+            <img src="about-me.png" alt="Portrait of Karan Pratap Singh" loading="eager" decoding="async" />
           </div>
-        </div><!-- /slider-item -->
-      </div>
-    </section>
+          <figcaption id="photoTitle" class="sub" style="text-align:center">Hey! I'm Karan 👋</figcaption>
+        </figure>
 
-    <!-- ABOUT -->
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-      <div class="container">
-        <div class="row">
-          <div class="row d-flex align-items-stretch">
-            <div class="col-md-6 col-lg-5 d-flex">
-              <div class="img-about img d-flex align-items-stretch">
-                <div class="overlay">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="images/about-me.jpeg" class="img-fluid rounded b-shadow-a" alt="Karan portrait">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Karan Pratap Singh</span></p>
-                        <p><span class="title-s">Experience: </span> <span>7+ years</span></p>
-                        <p><span class="title-s">Address: </span> <span>Dallas, Texas</span></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skills</p>
-                    <span>SQL</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
-                    <span>Python</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
-                    <span>Data Engineering</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
-                    <span>Machine Learning</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
-                    <span>Cloud (Azure/GCP/AWS)</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
-                    <span>ETL & Big Data</span>
-                    <div class="progress"><div class="progress-bar" role="progressbar" style="width: 100%"></div></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <p id="aboutBlurb" class="sub" style="margin:10px 0 16px">
+          I enjoy turning business goals into clear, deliverable roadmaps—and then shipping them.
+          My happy place: crisp KPIs, predictable delivery, and AI + automation that makes ops lighter.
+        </p>
 
-            <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-              <div class="row justify-content-start pb-3">
-                <div class="col-md-12 heading-section ftco-animate">
-                  <h1 class="big">About</h1>
-                  <h2 class="mb-4">About Me</h2>
-                  <p>I am a Senior Data Engineer with a Bachelor’s in Computer Science and a Master’s in Business Analytics, specializing in architecting large-scale, highly reliable data ecosystems. I build end-to-end pipelines and lakehouse architectures powering analytics and AI across e-commerce, healthcare, retail, and SaaS. I focus on orchestration, governance, quality, and CI/CD to deliver production-grade platforms that reduce latency, cut costs, and drive measurable business impact.</p>
-                  <ul class="about-info mt-4 px-md-0 px-2">
-                    <li class="d-flex"><span>Profile:</span> <span>Software Development, Machine Learning &amp; Data Engineering</span></li>
-                    <li class="d-flex"><span>Domain:</span> <span>AI/ML, Cloud & Data Platforms, Predictive Analytics, Intelligent Systems, Automation</span></li>
-                    <li class="d-flex"><span>Education:</span> <span>Master of Science in Business Analytics</span></li>
-                    <li class="d-flex"><span>BI Tools:</span> <span>Power BI, Tableau</span></li>
-                    <li class="d-flex"><span>Core Skills:</span> <span>Cloud (Azure, GCP, AWS), PySpark, Airflow, BigQuery, Data Modeling, ML, SQL, Python, Git, JIRA, CI/CD, NLP</span></li>
-                    <li class="d-flex"><span>Interest:</span> <span>Music, hiking &amp; swimming</span></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="counter-wrap ftco-animate d-flex mt-md-3">
-                <div class="text">
-                  <p><a href="https://www.linkedin.com/in/kps25/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-                </div>
-              </div>
-            </div>
-          </div><!-- /row inner -->
+        <h2 style="margin-top:4px">Toolbox</h2>
+        <div class="about kv">
+          <span class="chip">BigQuery</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">Tableau</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Python</span>
+          <span class="chip">Airflow / ADF</span>
+          <span class="chip">AWS · Azure · GCP</span>
+          <span class="chip">Jira / Confluence</span>
+        </div>
+        <div class="about kv" style="margin-top:8px">
+          <span class="chip">PMP®</span>
+          <span class="chip">CSM®</span>
+          <span class="chip">AWS Data Engineer</span>
+          <span class="chip">Databricks Lakehouse</span>
         </div>
       </div>
     </section>
 
-    <!-- RESUME / EXPERIENCE -->
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-      <div class="container">
-        <div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>Senior Data Engineer with 7+ years building scalable data platforms and analytics ecosystems. Expert in end-to-end ETL, lakehouse design, and production orchestration that power forecasting, cost optimization, customer intelligence, and fraud detection.</p>
-            <p>
-              <a href="https://drive.google.com/file/d/1lsI8wQRyf0qmuX7UVWVMC1yevZ5h-Spg/view?usp=sharing"
-                 class="btn btn-primary py-3 px-5">Download CV</a>
-            </p>
-          </div>
-        </div>
+    <!-- Experience -->
+    <section id="experience" class="experience">
+      <h2>Experience</h2>
+      <div class="xp-grid">
+        <article class="xp">
+          <div class="role">Technical Project Manager</div>
+          <div class="meta">UnitedHealth Group · Dallas, TX · Feb 2025 – Present</div>
+          <p class="desc">
+            Led delivery of an AI-driven consumer experience & fraud platform—defining KPIs, governance cadence,
+            and privacy alignment (SOX/PCI/HIPAA). Drove Azure-powered analytics to Power BI for real-time risk visibility
+            and cut investigation turnaround by 40%; influenced automation investments with $25M+ annual savings.
+          </p>
+        </article>
 
-        <!-- Experience Title -->
-        <div class="row">
-          <h1 class="big-4">Experience</h1>
-          <div class="underline"></div>
-        </div>
-        <br>
+        <article class="xp">
+          <div class="role">Technical Project Manager</div>
+          <div class="meta">Walmart Global Tech · Bentonville, AR · Aug 2024 – Jan 2025</div>
+          <p class="desc">
+            Orchestrated a data-driven forecasting & recommendation program: ADF/Databricks hourlies,
+            KPI monitoring (+20% accuracy), and financial “what-if” simulations (planning time −70%).
+            Presented executive insights that improved transparency across forecasting decisions.
+          </p>
+        </article>
 
-        <!-- EXPERIENCE CAROUSEL -->
-        <div class="experience-wrap">
-          <div class="owl-carousel experience-carousel">
+        <article class="xp">
+          <div class="role">Business Analyst</div>
+          <div class="meta">Target · Dallas, TX · Aug 2022 – Jul 2024</div>
+          <p class="desc">
+            Ran Agile delivery for a BigQuery + Power BI segmentation & recommendation engine (50M+ tx/day),
+            boosting personalization (+12% accuracy), automating campaigns via Airflow (SLA breaches −70%),
+            and driving a +9% AOV uplift through A/B testing.
+          </p>
+        </article>
 
-            <!-- ITEM 1 -->
-            <div class="xp-card">
-              <span class="date">Feb 2025 – Present</span>
-              <h3 class="role">Senior Data Engineer</h3>
-              <p class="company">UnitedHealth Group, Irvine, California</p>
-              <ul>
-                <li>Built an AI-driven churn prediction platform on GCP (BigQuery, Databricks, Vertex AI) integrating 10M+ monthly member interactions, improving retention accuracy by 18%.</li>
-                <li>Automated ETL and orchestration (PySpark, Airflow, Cloud Build), cutting reporting latency by 60% and deployment lead time by 50%.</li>
-                <li>Delivered HIPAA-compliant Delta Lake pipelines and real-time Looker dashboards on Azure, influencing $50M+ retention-driven decisions annually.</li>
-              </ul>
-            </div>
+        <article class="xp">
+          <div class="role">Data Analyst</div>
+          <div class="meta">Walmart · Noida, India · Feb 2020 – Jul 2022</div>
+          <p class="desc">
+            Helped stand up e-commerce risk analytics on GCP for real-time fraud/credit risk and behavioral intelligence;
+            tuned pipelines and dashboards to lower latency and improve prediction accuracy.
+          </p>
+        </article>
 
-            <!-- ITEM 2 -->
-            <div class="xp-card">
-              <span class="date">Aug 2024 – Jan 2025</span>
-              <h3 class="role">Data Engineer</h3>
-              <p class="company">Walmart Global Tech, Bentonville, Arkansas</p>
-              <ul>
-                <li>Developed and optimized Azure Data Factory and Databricks pipelines processing 10M+ daily sales, pricing, and promotion records, reducing data latency from 12 hours to under 1 hour and improving forecast accuracy by 20%.</li>
-                <li>Engineered parameterized “what-if” simulation frameworks for pricing, inventory, and seasonality, cutting scenario analysis time by 70% and enabling 50+ finance leaders to make data-driven decisions across $1.6B in sales.</li>
-                <li>Optimized Spark workloads and Delta Lake architecture, reducing compute costs by $250K annually and powering real-time financial insights for 100+ users via Power BI dashboards.</li>
-              </ul>
-            </div>
-            
-            <!-- ITEM 3 -->
-            <div class="xp-card">
-              <span class="date">Mar 2024 - Jul 2024</span>
-              <h3 class="role">Data Engineer</h3>
-              <p class="company">Target, Dallas, Texas</p>
-              <ul>
-                <li>Developed a GCP-based data platform integrating customer, transaction, and catalog data using Dataflow, Pub/Sub, and BigQuery, enabling real-time recommendation engines and demand forecasts across 2,000+ stores.</li>
-                <li>Automated ingestion and orchestration with Airflow and GitLab CI, reducing SLA violations by 70%, improving reporting latency from 24 hours to under 1 hour, and driving 12% higher campaign conversions.</li>
-              </ul>
-            </div>
-
-            <!-- ITEM 4 -->
-            <div class="xp-card">
-              <span class="date">Feb 2020 - Jul 2022</span>
-              <h3 class="role">Senior Data Scientist</h3>
-              <p class="company">Walmart Global Tech</p>
-              <ul>
-                <li>Built a real-time eCommerce risk analytics platform on GCP to detect fraud, credit risk, and shopper intent across millions of daily transactions, enabling faster, trust-based decisions.</li>
-                <li>Redesigned petabyte-scale pipelines with Dataflow, BigQuery, and Composer, reducing data latency from 6 hours to 30 min and accelerating model retraining cycles 3X.</li>
-              </ul>
-            </div>
-
-            <!-- ITEM 5 -->
-            <div class="xp-card">
-              <span class="date">Jun 2018 - Jan 2020</span>
-              <h3 class="role">Software Engineer</h3>
-              <p class="company">Adobe, Noida, India</p>
-              <ul>
-                <li>–	Modernized Adobe’s data infrastructure by migrating analytics workloads to AWS (S3, Redshift, Glue), cutting reporting latency by 40% and improving global pipeline scalability.</li>
-                <li>Scrum/Kanban delivery; ~25% faster releases.</li>
-                <li>Built ETL and star-schema data models for customer engagement and churn analytics, enabling real-time insights across 20+ teams and ensuring 100% GDPR/CCPA compliance.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Education -->
-        <br><br>
-        <div class="row">
-          <h1 class="big-4">Education</h1>
-          <div class="underline"></div>
-        </div>
-        <br>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2022–2024</span>
-              <h2>MS in Business Analytics</h2>
-              <span class="position">The University of Texas at Dallas</span>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="resume-wrap ftco-animate">
-              <span class="date">2014–2018</span>
-              <h2>Bachelor of Engineering</h2>
-              <span class="position">Abdul Kalam Technical University</span>
-            </div>
-          </div>
-        </div>
+        <article class="xp">
+          <div class="role">Software Engineer</div>
+          <div class="meta">Adobe · Noida, India · Jun 2018 – Jan 2020</div>
+          <p class="desc">
+            Modernized analytics pipelines on AWS (S3/Redshift/Glue), improving reporting latency by 40%;
+            built dimensional models for customer intelligence and automated ETL schedules with SLA gains (+35%).
+          </p>
+        </article>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="ftco-section" id="project-section">
-      <div class="row">
-        <h1 class="big-4">Projects</h1>
-      </div>
-      <br><br>
-      <div class="container px-4">
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a href="https://github.com/karansingh400"
-                 class="block-20 zoom-effect"
-                 style="background-image: url('images/proj_1.jpg'); background-size: contain; background-position: center; aspect-ratio: 16/9;">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="https://github.com/karansingh400">NeuroScan - Brain Tumor Detection</a></h3>
-                <p>Deep learning–based MRI tumor detection using transfer learning.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a href="https://github.com/karansingh400"
-                 class="block-20 zoom-effect"
-                 style="background-image: url('images/proj_2.jpg'); background-size: contain; background-position: center; aspect-ratio: 16/9;">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="https://github.com/karansingh400">Uber Data Analytics</a></h3>
-                <p>Airflow + BigQuery ETL for rides data and operational insights.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a href="https://github.com/karansingh400"
-                 class="block-20 zoom-effect"
-                 style="background-image: url('images/genai_thumbnail.png'); background-size: contain; background-position: center; aspect-ratio: 16/9;">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="https://github.com/karansingh400">GenAI Post Generator</a></h3>
-                <p>LLama on Groq API to generate on-brand LinkedIn posts.</p>
-              </div>
-            </div>
-          </div>
-        </div><!-- /row -->
+    <!-- Fun stats -->
+    <section id="stats" class="stats" aria-label="Fun stats">
+      <div class="stat-grid">
+        <div class="stat"><div class="num" data-target="9">0</div><div class="label">Years of Experience</div></div>
+        <div class="stat"><div class="num" data-target="25">0</div><div class="label">Programs Delivered</div></div>
+        <div class="stat"><div class="num" data-target="40">0</div><div class="label">% Faster Turnarounds</div></div>
       </div>
     </section>
 
-    <!-- COUNTERS -->
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <div class="container">
-        <div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="10">0</strong>
-                <span>Projects Completed and counting</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="250">0</strong>
-                <span>Sleepless Nights</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="500">0</strong>
-                <span>Cups of Coffee</span>
-              </div>
-            </div>
-          </div>
+    <!-- Projects (auto from GitHub) -->
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <p class="sub">A few public repos and experiments—analytics, automation, and little utilities.</p>
+
+      <div class="controls">
+        <div class="left">
+          <label>
+            <span class="sr-only">Search</span>
+            <input id="search" type="search" placeholder="Search repos…" />
+          </label>
+          <label>
+            <span class="sr-only">Sort</span>
+            <select id="sort">
+              <option value="featured">Featured first</option>
+              <option value="updated">Recently updated</option>
+              <option value="name">Name A→Z</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <button id="loadMore" class="btn">Load more</button>
         </div>
       </div>
 
-      <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-        <div class="row justify-content-center">
-          <div class="col-md-7 ftco-animate text-center">
-            <h2>More projects on<span> GitHub </span></h2>
-            <div class="heading">
-              <h4>I specialize in automation, AI solutions, and data engineering</h4>
-              <br>
-              <p><a href="https://github.com/karansingh400" class="btn btn-primary py-3 px-5">GitHub</a></p>
-            </div>
-          </div>
-        </div>
+      <div id="repoGrid" class="repo-grid" aria-live="polite" aria-busy="true"></div>
+      <div id="repoSkeletons" class="repo-grid" style="margin-top:10px"></div>
+      <p id="repoError" style="display:none; color:var(--warn)">Couldn’t load GitHub repositories. Please refresh later.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="sub">Best ways to reach me.</p>
+      <div class="links">
+        <a class="btn" href="tel:+14693322869">📞 (469) 332-2869</a>
+        <a class="btn" href="mailto:karan.corporate25@gmail.com">✉️ karan.corporate25@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/karan-singh-8a6614374/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/karansingh400" target="_blank" rel="noopener">GitHub</a>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Below are the details to reach out to me!</p>
-          </div>
-        </div>
-
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-map-signs"></span>
-              </div>
-              <h3 class="mb-4">Address</h3>
-              <p>Dallas, Texas</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-phone2"></span>
-              </div>
-              <h3 class="mb-4">Contact Number</h3>
-              <p><a href="tel://+14693322869">+1 (469) 332-2869</a></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-paper-plane"></span>
-              </div>
-              <h3 class="mb-4">Email Address</h3>
-              <p><a href="mailto:karan.kps25@gmail.com">karan.kps25@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-            <div class="align-self-stretch box p-4 text-center">
-              <div class="icon d-flex align-items-center justify-content-center">
-                <span class="icon-globe"></span>
-              </div>
-              <h3 class="mb-4">LinkedIn</h3>
-              <p><a href="https://www.linkedin.com/in/kps25/">Click Here</a></p>
-            </div>
-          </div>
-
-          <div class="container">
-            <br><br><br>
-            <ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-              <li class="ftco-animate normal-txt">Find me on</li>
-              <li class="ftco-animate"><a href="https://www.linkedin.com/in/kps25/"><span class="icon-linkedin"></span></a></li>
-              <li class="ftco-animate"><a href="https://www.instagram.com/karan.kps25/"><span class="icon-instagram"></span></a></li>
-            </ul>
-            <br>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <p>Copyright
-              &copy;<script>document.write(new Date().getFullYear());</script>
-              All rights reserved by Karan Pratap Singh
-            </p>
-          </div>
-        </div>
+    <footer>
+      <div class="container" style="padding:0">
+        <small>© <span id="year"></span> Karan Pratap Singh</small>
       </div>
     </footer>
+  </main>
 
-    <!-- LOADER -->
-    <div id="ftco-loader" class="show fullscreen">
-      <svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
-      </svg>
-    </div>
+  <div id="testStatus" aria-live="polite" class="pass" style="display:none"></div>
 
-    <!-- Vendor JS (existing) -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="js/main.js"></script>
+  <script>
+  // ——— Config ———
+  const CONFIG = {
+    githubUser: 'karansingh400',
+    perPage: 12,
+    maxRepos: 60,
+    resumeUrl: 'resume.pdf'
+  };
 
-    <!-- Experience Carousel Init + Keyboard support -->
-    <script>
-      $(function () {
-        $('.experience-carousel').owlCarousel({
-          loop: false,
-          margin: 24,
-          nav: true,
-          dots: true,
-          smartSpeed: 600,
-          responsive: {
-            0:   { items: 1 },
-            992: { items: 2 }
-          },
-          navText: [
-            '<span class="oi oi-chevron-left" aria-label="Previous"></span>',
-            '<span class="oi oi-chevron-right" aria-label="Next"></span>'
-          ]
-        });
+  // ——— Theme toggle ———
+  const themeBtn = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('theme');
+  if(saved) document.documentElement.setAttribute('data-theme', saved);
+  themeBtn.addEventListener('click', ()=>{
+    const cur = document.documentElement.getAttribute('data-theme')||'dark';
+    const next = (cur==='dark')?'light':'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
 
-        // Keyboard navigation for accessibility
-        $(document).on('keydown', function (e) {
-          const $c = $('.experience-carousel');
-          if (e.key === 'ArrowLeft')  $c.trigger('prev.owl.carousel');
-          if (e.key === 'ArrowRight') $c.trigger('next.owl.carousel');
-        });
+  // Footer year + resume links
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('resumeBtn').href = CONFIG.resumeUrl;
+
+  // ——— Projects from GitHub ———
+  const repoGrid = document.getElementById('repoGrid');
+  const repoSkeletons = document.getElementById('repoSkeletons');
+  const repoError = document.getElementById('repoError');
+  const search = document.getElementById('search');
+  const sortSel = document.getElementById('sort');
+  const loadMoreBtn = document.getElementById('loadMore');
+
+  let allRepos = [];
+  let shownCount = 0;
+
+  function showSkeletons(n=8){
+    repoSkeletons.innerHTML = '';
+    for(let i=0;i<n;i++){
+      const sk = document.createElement('div');
+      sk.className = 'skeleton';
+      repoSkeletons.appendChild(sk);
+    }
+    repoGrid.setAttribute('aria-busy','true');
+  }
+  function hideSkeletons(){ repoSkeletons.innerHTML = ''; repoGrid.setAttribute('aria-busy','false'); }
+
+  function timeAgo(dateStr){
+    const d = new Date(dateStr); const s = Math.floor((Date.now()-d.getTime())/1000);
+    const t = [ ['y',31536000], ['mo',2592000], ['d',86400], ['h',3600], ['m',60] ];
+    for(const [label,sec] of t){ if(s>=sec) return Math.floor(s/sec)+label; }
+    return s+"s";
+  }
+
+  async function fetchRepos(){
+    showSkeletons();
+    try{
+      const headers = {
+        'Accept':'application/vnd.github+json',
+        'X-GitHub-Api-Version':'2022-11-28'
+      };
+      let page=1; const gathered=[];
+      while(gathered.length < CONFIG.maxRepos){
+        const url = `https://api.github.com/users/${CONFIG.githubUser}/repos?sort=updated&per_page=100&page=${page}`;
+        const res = await fetch(url,{headers});
+        if(!res.ok) throw new Error(`GitHub API error ${res.status}`);
+        const batch = await res.json();
+        if(!Array.isArray(batch) || batch.length===0) break;
+        gathered.push(...batch);
+        if(batch.length < 100) break;
+        page++;
+      }
+      allRepos = gathered
+        .filter(r => !r.fork && !r.archived)
+        .map(r => ({
+          id:r.id,
+          name:r.name,
+          full_name:r.full_name,
+          html_url:r.html_url,
+          description:r.description,
+          language:r.language,
+          stargazers_count:r.stargazers_count,
+          forks_count:r.forks_count,
+          open_issues_count:r.open_issues_count,
+          updated_at:r.updated_at,
+          topics:r.topics||[],
+          homepage:r.homepage
+        }));
+      render(true);
+    }catch(err){
+      console.error(err);
+      repoError.style.display='block';
+    }finally{ hideSkeletons(); }
+  }
+
+  function matchesQuery(repo, q){
+    if(!q) return true;
+    q=q.toLowerCase();
+    const hay = [repo.name, repo.description, repo.language, ...(repo.topics||[])].filter(Boolean).join(' ').toLowerCase();
+    return hay.includes(q);
+  }
+
+  function sortRepos(list){
+    const how = sortSel.value;
+    if(how==='name') return [...list].sort((a,b)=>a.name.localeCompare(b.name));
+    if(how==='updated') return [...list].sort((a,b)=> new Date(b.updated_at)-new Date(a.updated_at));
+    const withScore = list.map(r=>({r, score: r.topics?.includes('portfolio') ? 1 : 0}));
+    return withScore
+      .sort((a,b)=> (b.score - a.score) || (new Date(b.r.updated_at)-new Date(a.r.updated_at)))
+      .map(x=>x.r);
+  }
+
+  function repoCard(r){
+    // nicer wrapping for long names
+    const safeName = r.name.replace(/([/_-])/g, '$1\u200b');
+    const topics = (r.topics||[]).slice(0,5).map(t=>`<span class="topic">${t}</span>`).join('');
+    const homepage = r.homepage ? `<a href="${r.homepage}" target="_blank" rel="noopener" class="btn" style="padding:6px 10px">Live</a>` : '';
+    return `<article class="repo" aria-label="${r.name}">
+      <h3><a href="${r.html_url}" target="_blank" rel="noopener">${safeName}</a></h3>
+      <p>${r.description ? r.description.replace(/</g,'&lt;') : '—'}</p>
+      <div class="meta">
+        <span title="Primary language">🧩 ${r.language || 'n/a'}</span>
+        <span title="Last updated">⏱️ ${timeAgo(r.updated_at)} ago</span>
+      </div>
+      <div class="meta">${topics}</div>
+      <div class="meta">${homepage}</div>
+    </article>`;
+  }
+
+  function render(reset=false){
+    const q = search.value.trim();
+    const filtered = allRepos.filter(r=>matchesQuery(r,q));
+    const sorted = sortRepos(filtered);
+
+    if(reset){ shownCount = 0; repoGrid.innerHTML=''; }
+
+    const next = sorted.slice(shownCount, shownCount + CONFIG.perPage);
+    repoGrid.insertAdjacentHTML('beforeend', next.map(repoCard).join(''));
+    shownCount += next.length;
+
+    loadMoreBtn.style.display = (shownCount < sorted.length) ? 'inline-flex' : 'none';
+  }
+
+  search.addEventListener('input', ()=> render(true));
+  sortSel.addEventListener('change', ()=> render(true));
+  loadMoreBtn.addEventListener('click', ()=> render(false));
+
+  // Stats counters
+  function animateCounters(){
+    const nums = document.querySelectorAll('.stat .num');
+    const tween = (el, start, end, t0, dur)=>{
+      const t = Math.min(1, (performance.now()-t0)/dur);
+      el.textContent = String(Math.floor(start + t*(end-start)));
+      if(t<1) requestAnimationFrame(()=>tween(el,start,end,t0,dur));
+    };
+    const io = new IntersectionObserver((entries, obs)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          const el = e.target; const target = parseInt(el.getAttribute('data-target')||'0',10);
+          tween(el, 0, target, performance.now(), 900);
+          obs.unobserve(el);
+        }
       });
+    },{threshold:.6});
+    nums.forEach(n=>io.observe(n));
+  }
+  animateCounters();
 
-      // THEME TOGGLE (remember preference)
-      (function(){
-        const btn = document.getElementById('themeToggle');
-        const saved = localStorage.getItem('theme');   // "light" | "dark" | null
-        if (saved === 'light') document.body.classList.add('light');
+  fetchRepos();
+  </script>
 
-        const syncIcon = () => {
-          btn.textContent = document.body.classList.contains('light') ? '☾/☀︎' : '☀︎/☾';
-        };
-        syncIcon();
-
-        btn.addEventListener('click', () => {
-          document.body.classList.toggle('light');
-          localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
-          syncIcon();
-        });
-      })();
-    </script>
-  </body>
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Karan Pratap Singh",
+    "jobTitle": "Technical Program/Project Manager",
+    "email": "mailto:karan.corporate25@gmail.com",
+    "telephone": "+14693322869",
+    "url": "https://karansingh400.github.io/",
+    "sameAs": [
+      "https://github.com/karansingh400",
+      "https://www.linkedin.com/in/karan-singh-8a6614374/"
+    ]
+  }
+  </script>
+</body>
 </html>
